@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>搭建个人博客</title>
+      <link href="/2025/03/01/%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/"/>
+      <url>/2025/03/01/%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</url>
+      
+        <content type="html"><![CDATA[<p><a href="https://zhuanlan.zhihu.com/p/60578464">使用 Hexo+GitHub 搭建个人免费博客教程（小白向） - 知乎 (zhihu.com)</a></p><h1 id="下载并配置hexo"><a href="#下载并配置hexo" class="headerlink" title="下载并配置hexo"></a>下载并配置hexo</h1><h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p><code>npm install -g hexo-cli</code></p><h2 id="Hexo初始化和本地预览"><a href="#Hexo初始化和本地预览" class="headerlink" title="Hexo初始化和本地预览"></a>Hexo初始化和本地预览</h2><ol><li>创建博客的本地文件夹</li><li>在文件夹中运行命令</li></ol><pre><code class="highlight plaintext">初始化并安装所需组件：hexo init      # 初始化npm install    # 安装组件完成后依次输入下面命令，启动本地服务器进行预览：hexo g   # 生成页面hexo s   # 启动预览</code></pre><h2 id="Hexo博客文件夹目录结构"><a href="#Hexo博客文件夹目录结构" class="headerlink" title="Hexo博客文件夹目录结构"></a>Hexo博客文件夹目录结构</h2><blockquote><p>.</p><p>├── .deploy<br>├── public<br>├── source<br>│   ├── _posts      &#x2F;&#x2F; 存放文章的文件夹<br>│   ├── about       &#x2F;&#x2F; 存放关于页面的文件夹<br>│   ├── categories  &#x2F;&#x2F; 存放分类页面的文件夹<br>│   ├── tags        &#x2F;&#x2F; 存放标签页面的文件夹<br>│   └── themes      &#x2F;&#x2F; 存放主题的文件夹<br>├── themes          &#x2F;&#x2F; 主题文件夹<br>│   ├── landscape    &#x2F;&#x2F; 默认主题文件夹<br>│   │   ├── layout<br>│   │   ├── scripts<br>│   │   ├── source<br>│   │   └── …<br>│   └── your_theme    &#x2F;&#x2F; 自定义主题文件夹<br>├── _config.yml     &#x2F;&#x2F; Hexo 配置文件<br>├── package.json    &#x2F;&#x2F; 包管理文件<br>└── scaffolds       &#x2F;&#x2F; 模板文件夹</p></blockquote><h1 id="创建GitHub仓库"><a href="#创建GitHub仓库" class="headerlink" title="创建GitHub仓库"></a>创建GitHub仓库</h1><p>Repository name 中输入 <code>likwater.github.io</code>。选择public<img src="../图片/搭建个人博客.assets/image-20250228223719821.png" alt="image-20250228223719821" style="zoom:48%;" /></p><h1 id="部署-Hexo-到-GitHub-Pages"><a href="#部署-Hexo-到-GitHub-Pages" class="headerlink" title="部署 Hexo 到 GitHub Pages"></a>部署 Hexo 到 GitHub Pages</h1><h2 id="安装-hexo-deployer-git"><a href="#安装-hexo-deployer-git" class="headerlink" title="安装 hexo-deployer-git"></a>安装 hexo-deployer-git</h2><p>在博客的本地文件夹中打开git bash，输入命令<code>npm install hexo-deployer-git --save</code></p><h2 id="修改-config-yml"><a href="#修改-config-yml" class="headerlink" title="修改 _config.yml"></a>修改 _config.yml</h2><p>然后修改 _config.yml文件末尾的 Deployment 部分，修改成如下：</p><pre><code class="highlight plaintext">deploy:  type: git  repository: git@github.com:likwater/likwater.github.io.git  branch: master</code></pre><h2 id="将网站上传部署到-GitHub-Pages"><a href="#将网站上传部署到-GitHub-Pages" class="headerlink" title="将网站上传部署到 GitHub Pages"></a>将网站上传部署到 GitHub Pages</h2><p>输入命令<code>hexo d</code></p><h1 id="访问博客"><a href="#访问博客" class="headerlink" title="访问博客"></a>访问博客</h1><p><a href="https://likwater.github.io/">https://likwater.github.io/</a></p><h1 id="开始使用"><a href="#开始使用" class="headerlink" title="开始使用"></a>开始使用</h1><h2 id="发布文章"><a href="#发布文章" class="headerlink" title="发布文章"></a>发布文章</h2><h3 id="命令行创建"><a href="#命令行创建" class="headerlink" title="命令行创建"></a>命令行创建</h3><ol><li>在博客本地文件夹目录打开git bash，输入命令<code>hexo new &quot;文件名&quot;</code>，然后 source 文件夹中会出现一个 对应文件名的.md 文件，就可以使用 Markdown 编辑器在该文件中撰写文章了。命令行生成会有部分文章信息</li></ol><h3 id="手动创建"><a href="#手动创建" class="headerlink" title="手动创建"></a>手动创建</h3><p>也可以不使用命令自己创建 .md 文件，只需在文件开头手动加入如下格式 Front-matter 即可，写完后运行 <code>hexo g</code> 和 <code>hexo d</code> 发布。</p><pre><code class="highlight plaintext">---title: Hello World # 标题date: 2019/3/26 hh:mm:ss # 时间categories: # 分类- Diarytags: # 标签- PS3- Games---摘要&lt;!--more--&gt;正文</code></pre><h3 id="文章信息模板"><a href="#文章信息模板" class="headerlink" title="文章信息模板"></a>文章信息模板</h3><pre><code class="highlight plaintext">---title: author: catskycover: &#x27;&#x27; #封面categories:  - tags:  - date: YYYY-MM-DD HH:MM:SS---</code></pre><h3 id="上传文章"><a href="#上传文章" class="headerlink" title="上传文章"></a>上传文章</h3><ol><li>写完后运行下面代码将文章渲染并部署到 GitHub Pages 上完成发布。</li></ol><pre><code class="highlight plaintext">以后每次发布文章都是这几条命令。# 清除缓存（可选）# 重新生成# 部署hexo clean  hexo g      hexo d</code></pre><h2 id="网站设置"><a href="#网站设置" class="headerlink" title="网站设置"></a>网站设置</h2><p>包括网站名称、描述、作者、链接样式等，全部在网站目录下的 _config.yml 文件中，参考<a href="https://hexo.io/zh-cn/docs/configuration">配置 | Hexo</a>按需要编辑。</p><p><strong>注意：冒号后要加一个空格！</strong></p><h2 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a>更换主题</h2><p>在<a href="https://hexo.io/themes/">Themes | Hexo</a>选择一个喜欢的主题，比如<a href="https://butterfly.js.org/posts/21cfbf15/">Butterfly 文檔(一) 快速開始 | Butterfly</a>，<a href="https://blog.csdn.net/mjh1667002013/article/details/129290903">【Hexo】Hexo搭建Butterfly主题并快速美化_hexo butterfly-CSDN博客</a></p><h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><pre><code class="highlight plaintext">hexo new &quot;name&quot;       # 新建文章hexo new page &quot;name&quot;  # 新建页面hexo g                # 生成页面hexo d                # 部署hexo g -d             # 生成页面并部署hexo s                # 本地预览hexo clean            # 清除缓存和已生成的静态文件hexo help             # 帮助</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> web </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 博客 </tag>
+            
+            <tag> github </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hello World</title>
       <link href="/2025/02/28/hello-world/"/>
       <url>/2025/02/28/hello-world/</url>
