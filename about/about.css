@@ -70,20 +70,63 @@ body {
   flex-direction: column;
   gap: 18px;
 }
+.card.skills-card {
+  background: linear-gradient(135deg, #e3f0ff 0%, #f8fbfd 100%);
+  border-left: 6px solid #6cb6f7;
+  box-shadow: 0 4px 18px rgba(108,182,247,0.08);
+  position: relative;
+}
+.card.skills-card h3::before {
+  content: "\1F4BB";
+  margin-right: 8px;
+}
+.card.edu-card {
+  background: #f7faff;
+  border-left: 6px solid #7ed6df;
+  box-shadow: 0 2px 12px rgba(126,214,223,0.08);
+  position: relative;
+}
+.card.edu-card h3::before {
+  content: "\1F393";
+  margin-right: 8px;
+}
+.card.intern-card {
+  background: #f9f6ff;
+  border-left: 6px solid #a29bfe;
+  box-shadow: 0 2px 12px rgba(162,155,254,0.08);
+}
+.card.intern-card h3::before {
+  content: "\1F4BC";
+  margin-right: 8px;
+}
+.card.competition-card {
+  background: #fff9f3;
+  border-left: 6px solid #f6b93b;
+  box-shadow: 0 2px 12px rgba(246,185,59,0.08);
+}
+.card.competition-card h3::before {
+  content: "\1F3C6";
+  margin-right: 8px;
+}
 .card {
-  background: #f8fbfd;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-  padding: 18px 22px;
-  margin-bottom: 0;
+  padding-top: 10px; /* 从原来的14px减小到10px */
+  border-radius: 18px;
+  padding: 10px 32px 32px 32px; /* 修改上内边距为10px，保持其他方向不变 */
+  font-size: 17px;
+  margin-bottom: 24px;
 }
 .card h3 {
-  margin: 0 0 10px 0;
-  color: #2d6ca2;
-  font-size: 17px;
-  border-left: 4px solid #2d6ca2;
-  padding-left: 8px;
-  font-weight: bold;
+  font-size: 20px;
+  margin-top: 0; /* 确保标题没有上边距 */
+}
+/* 修复语法错误 */
+/* .margin-bottom: 18px; */ /* 删除这一行，因为它有语法错误 */
+.card {
+  border-radius: 14px;
+  transition: box-shadow 0.2s;
+}
+.card:hover {
+  box-shadow: 0 8px 32px rgba(45,108,162,0.13);
 }
 .card ul, .card ol {
   margin: 0;
